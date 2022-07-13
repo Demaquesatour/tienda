@@ -137,6 +137,7 @@ const obtener_cliente_admin = async function (req,res){
     res.status(500).send({ message: "NoAcces" });
   }
 }
+
 const actualizar_cliente_admin = async function (req,res){
   if(req.user){
     if(req.user.role =='admin'){

@@ -27,6 +27,7 @@ export class CreateClienteComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   registro(registroForm : any){
     if(registroForm.valid){
       console.log(this.cliente);

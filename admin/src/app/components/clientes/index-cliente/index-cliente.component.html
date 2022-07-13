@@ -34,14 +34,7 @@
         <div class="input-group-prepend">
           <div class="input-group-text">@</div>
         </div>
-        <input
-          class="form-control"
-          type="text"
-          (keyup)="filtro('correo')"
-          name="filtro_correo"
-          [(ngModel)]="filtro_correo"
-          placeholder="Correo"
-        />
+        <input class="form-control" type="text" (keyup)="filtro('correo')" name="filtro_correo" [(ngModel)]="filtro_correo" placeholder="Correo"/>
       </div>
     </form>
   </div>
@@ -75,15 +68,7 @@
               <td>{{ item.email }}</td>
               <td>
                 <div class="btn-group dropdown d-inline-block mb-3 me-2">
-                  <button
-                    class="btn btn-outline-secondary btn-sm dropdown-toggle"
-                    type="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    OPCIONES
-                  </button>
+                  <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">OPCIONES</button>
                   <div class="dropdown-menu">
                     <a class="dropdown-item" [routerLink]="['/panel/clientes',item._id]">Editar cliente</a>
                     <a class="dropdown-item" style="cursor:pointer;" data-toggle="modal" [attr.data-target]="'#delete-'+item._id">Eliminar cliente</a>
@@ -118,10 +103,6 @@
     </div>
   </div>
   <div class="card-footer">
-    <ngb-pagination
-      [(page)]="page"
-      [pageSize]="pageSize"
-      [collectionSize]="clientes.length"
-    ></ngb-pagination>
+    <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="clientes.length"></ngb-pagination>
   </div>
 </div>

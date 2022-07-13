@@ -8,10 +8,11 @@
             </div>
           </div>
 
-<form #registroForm ="ngForm" (ngSubmit)="registro(registroForm)">
+<ng-container *ngIf="producto">
+  <form #actualizarForm ="ngForm" (ngSubmit)="actualizar(actualizarForm)">
     <div class="card box-shadow-sm">
         <div class="card-header">
-            <h5 style="margin-bottom: 0px;">Registro de producto</h5>
+            <h5 style="margin-bottom: 0px;">Actualización de producto</h5>
         </div>
         <div class="card-body">
               <div class="row">
@@ -67,12 +68,25 @@
               </div>
         </div>
         <div class="card-footer">
-            <button *ngIf="!load_btn" class="btn btn-primary mr-3" type="submit">Crear producto</button>
+            <button *ngIf="!load_btn" class="btn btn-primary mr-3" type="submit">Actualizar producto</button>
             <button *ngIf="load_btn" class="btn btn-secondary" type="button" disabled>
               <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-              Creando...
+              Actualizando...
             </button>
             <a class="btn btn-warning" [routerLink]="['/panel/productos']" routerLinkActive="router-link-active" >Regresar</a>
         </div>
   </div>  
 </form>
+</ng-container>
+<ng-container *ngIf="producto == undefined">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="text-center">No se encontró el registro</h3>
+              <div class="row">
+                  <div class="col-3 mx-auto">
+                      <img src="assets/img/advertencia.png" alt="" style="width:100%">
+                  </div>
+              </div>
+    </div>
+  </div>
+</ng-container>
